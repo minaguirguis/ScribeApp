@@ -10,7 +10,7 @@ import UIKit
 import Speech
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var transcriptionTextField: UITextView!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         activitySpinner.isHidden = true
         
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        player.stop()
+        activitySpinner.stopAnimating()
+        activitySpinner.isHidden = true
     }
 
     func requestSpeechAuth() {
@@ -33,6 +39,7 @@ class ViewController: UIViewController {
                         self.audioPlayer = sound // our audioplayer needs to have sound
                         //it needs to be self because we are going inside a closure here
                         sound.play()
+                        self.audioPlayer.delegate = self//letting the audioplayer know that it has a delegate
                     } catch {
                         print("Error!")
                     }
@@ -43,7 +50,7 @@ class ViewController: UIViewController {
                         if let error = error {
                             print("There was an error \(error)")
                         } else {
-                            print(result?.bestTranscription.formattedString)
+                            self.transcriptionTextField.text = result?.bestTranscription.formattedString
                         }
                     
                     }
@@ -58,5 +65,6 @@ class ViewController: UIViewController {
         activitySpinner.isHidden = false
         activitySpinner.startAnimating()
         requestSpeechAuth()
+        
     }
 }

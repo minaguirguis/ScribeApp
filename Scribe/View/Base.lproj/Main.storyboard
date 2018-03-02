@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0Q-MS-VXJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scribe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9v-CO-om3">
-                                        <rect key="frame" x="158.5" y="14" width="58" height="27.5"/>
+                                        <rect key="frame" x="158.5" y="40" width="58" height="27.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -36,9 +36,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34470607749999999" blue="0.33289311960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="4jD-lK-3h1"/>
-                                    <constraint firstItem="J9v-CO-om3" firstAttribute="centerX" secondItem="G0Q-MS-VXJ" secondAttribute="centerX" id="Poa-XD-E4y"/>
-                                    <constraint firstItem="J9v-CO-om3" firstAttribute="centerY" secondItem="G0Q-MS-VXJ" secondAttribute="centerY" id="iek-Rl-YZ6"/>
+                                    <constraint firstAttribute="height" constant="75" id="4jD-lK-3h1"/>
+                                    <constraint firstItem="J9v-CO-om3" firstAttribute="top" secondItem="G0Q-MS-VXJ" secondAttribute="top" constant="40" id="C8n-Nz-r8w"/>
+                                    <constraint firstAttribute="trailing" secondItem="J9v-CO-om3" secondAttribute="trailing" constant="158.5" id="a9d-W2-SNW"/>
+                                    <constraint firstItem="J9v-CO-om3" firstAttribute="leading" secondItem="G0Q-MS-VXJ" secondAttribute="leading" constant="158.5" id="yeR-OO-8ya"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psw-Oh-jLV" customClass="CircleButton" customModule="Scribe" customModuleProvider="target">
@@ -64,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap the button down below to transcribe the audio embedded in this app." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T1U-EU-P1W">
-                                <rect key="frame" x="20" y="75" width="335" height="468"/>
+                                <rect key="frame" x="20" y="95" width="335" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="18"/>
